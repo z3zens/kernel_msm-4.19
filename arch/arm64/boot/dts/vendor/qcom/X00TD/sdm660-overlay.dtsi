@@ -42,16 +42,16 @@
 
 		fstab {
 			vendor {
-				type = "erofs";
-				mnt_flags = "ro";
+				type = "ext4";
+				mnt_flags = "ro,barrier=1,discard";
 				fsmgr_flags = "wait";
 			};
 
 			system {
 				compatible = "android,system";
 				dev = "/dev/block/platform/soc/c0c4000.sdhci/by-name/system";
-				type = "erofs";
-				mnt_flags = "ro";
+				type = "ext4";
+				mnt_flags = "ro,barrier=1,discard";
 				fsmgr_flags = "wait";
 				status = "ok";
 			};
